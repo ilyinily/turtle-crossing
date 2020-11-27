@@ -18,13 +18,15 @@ for i in range(STARTING_NUMBER):
     cars.append(CarManager())
 
 
-def new_car():
+def level_up():
     cars.append(CarManager())
+    scoreboard.level_up()
+
 
 screen.listen()
 screen.onkeypress(key="Up", fun=runner.move)
 screen.onkeypress(key="w", fun=scoreboard.level_up)
-screen.onkeypress(key="t", fun=new_car)
+screen.onkeypress(key="t", fun=level_up)
 
 game_is_on = True
 while game_is_on:
